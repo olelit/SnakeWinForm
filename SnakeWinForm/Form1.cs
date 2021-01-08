@@ -15,16 +15,18 @@ namespace SnakeWinForm
     {
 
         MainApp _App;
+        Draw _Draw;
 
         public Form1()
         {
             InitializeComponent();
             _App = new MainApp();
+            _Draw = new Draw(pictureBox1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            _Draw.Refresh();
         }
     }
 }

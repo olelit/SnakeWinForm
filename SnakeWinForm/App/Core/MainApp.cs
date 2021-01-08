@@ -9,9 +9,9 @@ namespace SnakeWinForm.App.Core
 {
     class MainApp
     {
-        public MainApp(PictureBox pictureBox)
+        public MainApp()
         {
-            PictureBox = pictureBox;
+            
         }
     }
 }
