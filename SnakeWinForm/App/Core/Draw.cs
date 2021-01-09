@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SnakeWinForm.App.Data;
+using SnakeWinForm.App.Manager;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,21 +12,35 @@ namespace SnakeWinForm.App.Core
 {
     class Draw
     {
-        private PictureBox _PictureBox;
-        private Graphics _Graphics;
-        private Bitmap _Bitmap;
+        private Setting Settings = Setting.Instance;
+
+        private PictureBox _PictureBoxForm;
+        private Graphics _G;
+        private Bitmap _Btm;
+
+        private ElementManager _ElementManager = ElementManager.Instance;
 
         public Draw(PictureBox pictureBox1)
         {
-            _PictureBox = pictureBox1;
-            _Bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            _Graphics = Graphics.FromImage(_Bitmap);
+            _PictureBoxForm = pictureBox1;
+            _Btm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            _G = Graphics.FromImage(_Btm);
         }
 
         public void Refresh()
         {
-            _Graphics.Clear(_PictureBox.BackColor);
-            _PictureBox.Image = _Bitmap;
+            _G.Clear(_PictureBoxForm.BackColor);
+            Redraw();
+            _PictureBoxForm.Image = _Btm;
+        }
+
+        private void Redraw()
+        {
+            foreach (IElement item in _ElementManager.Elements)
+            {
+                item.Move();
+                item.Draw(_G);
+            }
         }
     }
 }

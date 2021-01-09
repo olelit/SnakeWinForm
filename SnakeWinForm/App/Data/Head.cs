@@ -1,5 +1,4 @@
 ﻿using SnakeWinForm.App.Core;
-using SnakeWinForm.App.Data.Interface;
 using SnakeWinForm.App.Manager;
 using System;
 using System.Collections.Generic;
@@ -10,26 +9,32 @@ using System.Threading.Tasks;
 
 namespace SnakeWinForm.App.Data
 {
-    class Element: IElement, INonHeadElement
+    class Head : IElement, IHead
     {
         public Point Position { get; private set; }
         public Point PreviousPosition { get; private set; }
         public Setting Settings => Setting.Instance;
-        public SolidBrush Color => Settings.DefaultElementColor;
+        public SolidBrush Color => Settings.DefaultHeadColor;
         public Size ElemSize => Settings.ElemSize;
         public ElementManager Manager => ElementManager.Instance;
         public IElement Previous => throw new NotImplementedException();
 
-        public Element()
+        public Head()
         {
-            Previous = Manager.Last();
+            Position = Settings.DefaultHeadPosition;
+            PreviousPosition = Position;
             Manager.Add(this);
+            Manager.SetHead(this);
+        }
+
+        public void CheckPosition()
+        {
+
         }
 
         public void Move()
         {
-            Position = Previous.PreviousPosition;
-            Previous.ResetPosition();
+
         }
 
         public void Draw(Graphics g)
@@ -40,7 +45,7 @@ namespace SnakeWinForm.App.Data
 
         public void ResetPosition()
         {
-            PreviousPosition = Position;
+            throw new NotImplementedException();
         }
     }
 }

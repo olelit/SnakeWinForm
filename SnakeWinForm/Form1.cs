@@ -13,20 +13,19 @@ namespace SnakeWinForm
 {
     public partial class Form1 : Form
     {
-
-        MainApp _App;
-        Draw _Draw;
+        readonly MainApp App;
+        readonly Draw Draw;
 
         public Form1()
         {
             InitializeComponent();
-            _App = new MainApp();
-            _Draw = new Draw(pictureBox1);
+            App = new MainApp();
+            Draw = new Draw(pictureBox1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            _Draw.Refresh();
+            Draw.Refresh();
         }
     }
 }

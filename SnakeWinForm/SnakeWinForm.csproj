@@ -51,6 +51,14 @@
     <Compile Include="App\Core\Setting.cs" />
     <Compile Include="App\Core\MainApp.cs" />
     <Compile Include="App\Data\Element.cs" />
+    <Compile Include="App\Data\Head.cs" />
+    <Compile Include="App\Data\Init\ElementsInit.cs" />
+    <Compile Include="App\Data\Init\IInit.cs" />
+    <Compile Include="App\Data\Interface\IElement.cs" />
+    <Compile Include="App\Data\Interface\IHead.cs" />
+    <Compile Include="App\Data\Interface\INonHeadElement.cs" />
+    <Compile Include="App\Manager\ElementManager.cs" />
+    <Compile Include="App\Manager\InitManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

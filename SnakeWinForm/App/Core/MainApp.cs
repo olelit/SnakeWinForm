@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeWinForm.App.Manager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace SnakeWinForm.App.Core
     {
         public MainApp()
         {
-            
+            var init = new InitManager();
         }
     }
 }
