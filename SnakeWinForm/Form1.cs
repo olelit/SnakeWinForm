@@ -1,4 +1,6 @@
 ﻿using SnakeWinForm.App.Core;
+using SnakeWinForm.App.Data;
+using SnakeWinForm.App.Manager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +17,24 @@ namespace SnakeWinForm
     {
         readonly MainApp App;
         readonly Draw Draw;
+        readonly IHead Head;
 
         public Form1()
         {
             InitializeComponent();
             App = new MainApp();
             Draw = new Draw(pictureBox1);
+            Head = ElementManager.Instance.Head;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             Draw.Refresh();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

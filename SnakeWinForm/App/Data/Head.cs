@@ -17,7 +17,6 @@ namespace SnakeWinForm.App.Data
         public SolidBrush Color => Settings.DefaultHeadColor;
         public Size ElemSize => Settings.ElemSize;
         public ElementManager Manager => ElementManager.Instance;
-        public IElement Previous => throw new NotImplementedException();
 
         public Head()
         {

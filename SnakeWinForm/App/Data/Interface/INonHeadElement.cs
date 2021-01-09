@@ -8,7 +8,6 @@ namespace SnakeWinForm.App.Data.Interface
 {
     interface INonHeadElement
     {
-        INonHeadElement Previous { get; }
-        void ResetPosition();
+        IElement Previous { get;  }
     }
 }

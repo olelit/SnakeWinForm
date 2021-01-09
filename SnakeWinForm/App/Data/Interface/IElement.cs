@@ -13,6 +13,7 @@ namespace SnakeWinForm.App.Data
         Point PreviousPosition { get; }
         ElementManager Manager { get; }
         void Move();
+        void ResetPosition();
         void Draw(Graphics g);
     }
 }
