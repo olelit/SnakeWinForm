@@ -5,13 +5,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SnakeWinForm.App.Data
 {
     interface IHead
     {
+        Core.Control GetControl { get; }
         Point CurrentWay { get; }
         void CheckPosition();
-        void ChangeWay();
+        void ChangeWay(Keys keys);
     }
 }

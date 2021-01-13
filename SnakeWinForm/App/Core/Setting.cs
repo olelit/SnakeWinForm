@@ -15,8 +15,10 @@ namespace SnakeWinForm.App.Core
         public SolidBrush DefaultElementColor { get; private set; }
         public SolidBrush DefaultHeadColor { get; private set; }
         public Size ElemSize { get; private set; }
+        public int DefaultHeadStep { get; private set; }
 
         private Setting() {
+
             Load();
         }
 
@@ -26,6 +28,7 @@ namespace SnakeWinForm.App.Core
             DefaultElementColor = new SolidBrush(Color.Green);
             DefaultHeadColor = new SolidBrush(Color.Red);
             ElemSize = new Size(10, 10);
+            DefaultHeadStep = 10;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace SnakeWinForm
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            Head.ChangeWay(e.KeyCode);
         }
     }
 }

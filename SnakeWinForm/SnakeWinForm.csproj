@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\Core\Control.cs" />
     <Compile Include="App\Core\Draw.cs" />
     <Compile Include="App\Core\Refresh.cs" />
     <Compile Include="App\Core\Setting.cs" />

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SnakeWinForm.App.Data
 {
@@ -17,6 +18,8 @@ namespace SnakeWinForm.App.Data
         public SolidBrush Color => Settings.DefaultHeadColor;
         public Size ElemSize => Settings.ElemSize;
         public ElementManager Manager => ElementManager.Instance;
+        public Core.Control GetControl => new Core.Control();
+        public Point CurrentWay { get; private set; }
 
         public Head()
         {
@@ -24,6 +27,7 @@ namespace SnakeWinForm.App.Data
             PreviousPosition = Position;
             Manager.Add(this);
             Manager.SetHead(this);
+            CurrentWay = GetControl.GetCurrent();
         }
 
         public void CheckPosition()
@@ -33,7 +37,7 @@ namespace SnakeWinForm.App.Data
 
         public void Move()
         {
-
+            Position = new Point(Position.X + CurrentWay.X, Position.Y + CurrentWay.Y);
         }
 
         public void Draw(Graphics g)
@@ -44,7 +48,12 @@ namespace SnakeWinForm.App.Data
 
         public void ResetPosition()
         {
-            throw new NotImplementedException();
+            PreviousPosition = Position;
+        }
+
+        public void ChangeWay(Keys key)
+        {
+            CurrentWay = GetControl.GetCurrent(key);
         }
     }
 }
