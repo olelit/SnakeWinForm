@@ -2,13 +2,6 @@
 using SnakeWinForm.App.Data;
 using SnakeWinForm.App.Manager;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SnakeWinForm
@@ -22,6 +15,7 @@ namespace SnakeWinForm
         public Form1()
         {
             InitializeComponent();
+            WindowArea.WinSize = pictureBox1.Size;
             App = new MainApp();
             Draw = new Draw(pictureBox1);
             Head = ElementManager.Instance.Head;

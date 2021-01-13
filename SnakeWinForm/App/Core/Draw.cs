@@ -36,11 +36,12 @@ namespace SnakeWinForm.App.Core
 
         private void Redraw()
         {
-            foreach (IElement item in _ElementManager.Elements)
+            foreach (IElement item in _ElementManager.Elements.ToArray())
             {
                 item.Move();
                 item.Draw(_G);
             }
+            ElementManager.Instance.GetEat.Draw(_G);
         }
     }
 }

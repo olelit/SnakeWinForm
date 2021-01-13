@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeWinForm.App.Manager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace SnakeWinForm.App.Data.Init
             IElement element2 = new Element();
             IElement element3 = new Element();
             IElement element4 = new Element();
+
+            Eat eat = new Eat();
+            ElementManager.Instance.GetEat = eat;
         }
     }
 }

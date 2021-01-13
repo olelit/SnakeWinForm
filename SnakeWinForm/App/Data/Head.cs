@@ -32,12 +32,14 @@ namespace SnakeWinForm.App.Data
 
         public void CheckPosition()
         {
-
+            Position = WindowArea.TeleportIfNotInArea(Position);
+            ElementManager.Instance.GetEat.CheckHead(Position);
         }
 
         public void Move()
         {
             Position = new Point(Position.X + CurrentWay.X, Position.Y + CurrentWay.Y);
+            CheckPosition();
         }
 
         public void Draw(Graphics g)

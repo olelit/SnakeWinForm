@@ -12,6 +12,7 @@ namespace SnakeWinForm.App.Manager
     {
         public List<IElement> Elements { get; private set; }
         public IHead Head { get; private set; }
+        public Eat GetEat { get; set; }
         public static ElementManager Instance { get; private set; }
         public ElementManager() {
             Instance = this;

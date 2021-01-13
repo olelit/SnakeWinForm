@@ -14,6 +14,7 @@ namespace SnakeWinForm.App.Core
         public Point DefaultHeadPosition { get; private set; }
         public SolidBrush DefaultElementColor { get; private set; }
         public SolidBrush DefaultHeadColor { get; private set; }
+        public SolidBrush DefaultEatColor { get; private set; }
         public Size ElemSize { get; private set; }
         public int DefaultHeadStep { get; private set; }
 
@@ -27,6 +28,7 @@ namespace SnakeWinForm.App.Core
             DefaultHeadPosition = new Point(100, 100);
             DefaultElementColor = new SolidBrush(Color.Green);
             DefaultHeadColor = new SolidBrush(Color.Red);
+            DefaultEatColor = new SolidBrush(Color.Purple);
             ElemSize = new Size(10, 10);
             DefaultHeadStep = 10;
         }

@@ -48,9 +48,10 @@
   <ItemGroup>
     <Compile Include="App\Core\Control.cs" />
     <Compile Include="App\Core\Draw.cs" />
-    <Compile Include="App\Core\Refresh.cs" />
     <Compile Include="App\Core\Setting.cs" />
     <Compile Include="App\Core\MainApp.cs" />
+    <Compile Include="App\Core\WindowArea.cs" />
+    <Compile Include="App\Data\Eat.cs" />
     <Compile Include="App\Data\Element.cs" />
     <Compile Include="App\Data\Head.cs" />
     <Compile Include="App\Data\Init\ElementsInit.cs" />
