@@ -19,6 +19,11 @@ namespace SnakeWinForm
             App = new MainApp();
             Draw = new Draw(pictureBox1);
             Head = ElementManager.Instance.Head;
+
+            BringToFront();
+            Focus();
+            KeyPreview = true;
+            KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -29,6 +34,12 @@ namespace SnakeWinForm
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             Head.ChangeWay(e.KeyCode);
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            new Menu().Show();
+            Close();
         }
     }
 }
