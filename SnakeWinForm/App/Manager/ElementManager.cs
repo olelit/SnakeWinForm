@@ -42,5 +42,17 @@ namespace SnakeWinForm.App.Manager
         {
             return Elements.Last();
         }
+
+        public void Hit(Point pos)
+        {
+            foreach (var item in Elements.ToArray())
+            {
+                if(pos == item.Position && item != Elements.First())
+                {
+                    Elements.Clear();
+                    Head = null;
+                }
+            }
+        }
     }
 }

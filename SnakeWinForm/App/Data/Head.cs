@@ -32,6 +32,7 @@ namespace SnakeWinForm.App.Data
 
         public void CheckPosition()
         {
+            ElementManager.Instance.Hit(Position);
             Position = WindowArea.TeleportIfNotInArea(Position);
             ElementManager.Instance.GetEat.CheckHead(Position);
         }

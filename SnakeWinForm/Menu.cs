@@ -29,11 +29,5 @@ namespace SnakeWinForm
         {
             Application.Exit();
         }
-
-        private void score_Click(object sender, EventArgs e)
-        {
-            new ScoreTable();
-            Close();
-        }
     }
 }
